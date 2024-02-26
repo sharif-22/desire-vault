@@ -28,7 +28,7 @@ const Create = () => {
   };
   return (
     <div>
-      <h1 className="text-3xl p-5 text-center font-medium text-gray-800">
+      <h1 className="md:text-3xl text-xl p-5 text-center font-medium text-gray-800 ">
         Create Your Dream List ...
       </h1>
       <div className="">
