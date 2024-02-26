@@ -1,18 +1,18 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+
+// import Footer from "./components/Footer.jsx";
 
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"; // React-Router
+import NavBar from "./components/NavBar.jsx";
 
 
 const Template = () => {
   return (
     <>
-      {/* <Navbar />
+      <NavBar />
       <Outlet />
-      <Footer /> */}
+      {/* <Footer /> */}
     </>
   );
 };
