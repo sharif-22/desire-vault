@@ -62,7 +62,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to={"/ViewVaultList"}
+                  to={"/ViewVaultList/sharif"}
                   className="block py-2 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 text-gray-100 hover:text-blue-500"
                 >
                   View VaultList
