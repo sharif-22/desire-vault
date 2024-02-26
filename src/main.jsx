@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
-import Read from "./pages/Read";
+import ViewVaultList from "./pages/ViewVaultList";
 import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
         element: <Create />,
       },
       {
-        path: "/read",
-        element: <Read />,
+        path: "/ViewVaultList",
+        element: <ViewVaultList />,
       },
     ],
     errorElement: <ErrorPage />,
