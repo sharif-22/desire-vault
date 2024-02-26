@@ -15,7 +15,8 @@ const Create = () => {
   } = useForm();
 
   const addFireStoreDoc = async (data) => {
-    await addDoc(collection(db, "wishlist"), data);
+    const { userName } = data;
+    await addDoc(collection(db, userName), data);
   };
 
   const dataSubmit = (data, e) => {
@@ -35,6 +36,17 @@ const Create = () => {
           <div className="max-w-2xl mx-auto text-gray-700 bg-slate-200 rounded py-5 px-5">
             <div className="">
               <div>
+                <InputFieLd
+                  name={"userName"}
+                  label="Enter your name "
+                  type="text"
+                  placeholder="Enter product name here "
+                  register={register("userName", {
+                    required: "This filed is required",
+                  })}
+                  error={errors["userName"]}
+                  required
+                />
                 <InputFieLd
                   name={"product"}
                   label="Product name"
@@ -82,10 +94,10 @@ const Create = () => {
 
               <TextareaField
                 name={"description"}
-                label="Description"
+                label="Reason to buy this product"
                 cols="30"
                 rows="3"
-                placeholder="Describe about place here "
+                placeholder="Reason to buy this product"
                 register={register("description", {
                   required: "This field is required",
                 })}

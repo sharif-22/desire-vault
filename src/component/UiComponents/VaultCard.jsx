@@ -22,7 +22,7 @@ const VaultCard = ({ product, desc, price, url }) => {
           </p>
         </div>
       </div>
-      <button className="bg-yellow-300 py-2 px-3 font-medium rounded-b mt-2 w-full hover:shadow duration-500">
+      <button className="text-white bg-blue-700 rounded-lg hover:bg-blue-800  py-2 px-3 font-medium rounded-b mt-2 w-full hover:shadow duration-500">
         <a href={url} target="_blank">
           Buynow
         </a>
