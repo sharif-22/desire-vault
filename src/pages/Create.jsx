@@ -72,9 +72,12 @@ const Create = () => {
               />
             </div>
           </div>
-          {/* <div className="max-w-2xl mx-auto text-gray-700 py-5 ">
-          <Button text="Save planner" />
-        </div> */}
+          <div className="max-w-2xl mx-auto text-gray-700 py-5 ">
+            <button className="px-3 py-2 text-lg bg-">
+                Save wish product
+            </button>
+
+        </div>
         </form>
       </div>
     </div>
