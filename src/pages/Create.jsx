@@ -28,7 +28,7 @@ const Create = () => {
           <div className="grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-900 ">
-                Book name
+                Product Name
               </label>
               <input
                 name="book_name"
@@ -145,4 +145,4 @@ const Create = () => {
   );
 };
 
-export default (Create);
+export default Create;
