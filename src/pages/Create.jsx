@@ -5,43 +5,60 @@ import SelectFiled from "../component/SelectFiled";
 
 const Create = () => {
   const {
-    // handleSubmit,
+    handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm();
+
+  const dataSubmit = (data, e) => {
+    e.preventDefault();
+    console.log("Getting values from form submit: ", data);
+    reset();
+  };
   return (
     <div>
-      <div className="p-6">
-        <form className="max-w-6xl mx-auto" onSubmit={handleOnSubmit}>
-          <div className="grid gap-6 mb-6 md:grid-cols-2">
-            <div>
-              <label className="block mb-2 text-sm font-medium text-gray-900 ">
-                Book name
-              </label>
-              <input
-                name="book_name"
+      <h1 className="text-3xl p-5 text-center">
+        Add your wish product here ...
+      </h1>
+      <div>
+        <form action="" onSubmit={handleSubmit(dataSubmit)}>
+          <div className="max-w-2xl mx-auto text-gray-700 bg-blue-200 py-5 px-20">
+            <div className="">
+              <InputFieLd
+                name={"product"}
+                label="Product name"
                 type="text"
-                id="book_name"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                placeholder="Harry Potter"
+                placeholder="Enter product name here "
+                register={register("product", {
+                  required: "This filed is required",
+                })}
+                error={errors["product"]}
                 required
               />
-            </div>
-            <div>
-              <label className="block mb-2 text-sm font-medium text-gray-900 ">
-                Author Name
-              </label>
-              <input
-                name="author_name"
+              <InputFieLd
+                name={"price"}
+                label="₹ Price"
                 type="text"
-                id="author_name"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                placeholder="J. K. Rowling"
+                placeholder="Enter price here..!"
+                register={register("price", {
+                  required: "This filed is required",
+                })}
+                error={errors["price"]}
+                required
+              />
+              <SelectFiled
+                name={"category"}
+                label="Category"
+                register={register("category", {
+                  required: "This filed is required",
+                })}
+                error={errors["category"]}
                 required
               />
 
               <InputFieLd
-                name={"category"}
+                name={"photo"}
                 label="Photo"
                 type="text"
                 placeholder="Paste your photo link here!"
@@ -51,6 +68,7 @@ const Create = () => {
                 error={errors["Photo"]}
                 required
               />
+
               <TextareaField
                 name={"description"}
                 label="Description"
@@ -63,14 +81,27 @@ const Create = () => {
                 error={errors["description"]}
                 required
               />
+
+              <div className="">
+                <InputFieLd
+                  name={"image"}
+                  label="Image"
+                  type="file"
+                  placeholder="Paste your photo link here!"
+                  register={register("image", {
+                    required: "This filed is required",
+                  })}
+                  error={errors["image"]}
+                  required
+                />
+              </div>
+            </div>
+            <div className="py-4">
+              <button className="px-3 py-2 text-lg bg-blue-400 w-full rounded">
+                Save your product
+              </button>
             </div>
           </div>
-          <div className="max-w-2xl mx-auto text-gray-700 py-5 ">
-            <button className="px-3 py-2 text-lg bg-">
-                Save wish product
-            </button>
-
-        </div>
         </form>
       </div>
     </div>

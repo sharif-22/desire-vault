@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/create",
+        path: "/createVaultList",
         element: <Create />,
       },
       {
