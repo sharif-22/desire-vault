@@ -1,28 +1,31 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"; // React-Router
-
-const Template = () => {
-  return (
-    <>
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </>
-  );
-};
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Layout from "./layout/Layout";
+import Home from "./pages/Home";
+import Create from "./pages/Create";
+import Read from "./pages/Read";
+import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Template />,
+    element: <Layout />,
     children: [
-      //  page router
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/create",
+        element: <Create />,
+      },
+      {
+        path: "/read",
+        element: <Read />,
+      },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
 
