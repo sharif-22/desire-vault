@@ -11,39 +11,32 @@ const Create = () => {
   } = useForm();
   return (
     <div>
-      <div>
-        <form action="">
-          <div className="max-w-2xl mx-auto text-gray-700 bg-dark py-5 px-20">
-            <div className="">
-                <InputFieLd
-                  name={"product"}
-                  label="product name"
-                  type="text"
-                  placeholder="Enter product name here "
-                  register={register("product", {
-                    required: "This filed is required",
-                  })}
-                  error={errors["product"]}
-                  required
-                />
-                <InputFieLd
-                  name={"price"}
-                  label="₹ price"
-                  type="text"
-                  placeholder="Enter price here..!"
-                  register={register("price", {
-                    required: "This filed is required",
-                  })}
-                  error={errors["price"]}
-                  required
-                />
-              <SelectFiled
-                name={"category"}
-                label="category"
-                register={register("category", {
-                  required: "This filed is required",
-                })}
-                error={errors["category"]}
+      <div className="p-6">
+        <form className="max-w-6xl mx-auto" onSubmit={handleOnSubmit}>
+          <div className="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">
+                Book name
+              </label>
+              <input
+                name="book_name"
+                type="text"
+                id="book_name"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                placeholder="Harry Potter"
+                required
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 ">
+                Author Name
+              </label>
+              <input
+                name="author_name"
+                type="text"
+                id="author_name"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                placeholder="J. K. Rowling"
                 required
               />
 
