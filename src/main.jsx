@@ -6,13 +6,12 @@ import Footer from "./components/Footer";
 
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"; // React-Router
 
-
 const Template = () => {
   return (
     <>
-      {/* <Navbar />
+      <Navbar />
       <Outlet />
-      <Footer /> */}
+      <Footer />
     </>
   );
 };
@@ -22,7 +21,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Template />,
     children: [
-    //  page router
+      //  page router
     ],
   },
 ]);
