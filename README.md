@@ -4,11 +4,14 @@
 
 - [Project Title](#project-title)
 - [Description](#description)
+- [Problem](#problem)
+- [Solution](#solution)
 - [Demo](#demo)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [How to Use](#how-to-use)
 - [Firebase Setup](#firebase-setup)
+- [Team Members](#team-Members)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -21,9 +24,27 @@ Desire Vault
 
 Desire Vault is a collaborative product watchlist app developed for a hackathon project. It allows users to create, manage, and share lists of products they desire to purchase or keep track of. The app is built with React.js for the frontend, Tailwind CSS for styling, and Firebase for real-time collaborative features. Users can add products to their watchlists, mark them as purchased, and collaborate with others on shared lists.
 
+## Problem
+
+Many people often find themselves interested in various products, whether it's books, gadgets, or household items, but struggle to keep track of them all. Traditional methods like writing down lists or saving bookmarks can be cumbersome and disorganized. Additionally, sharing these lists with others for recommendations or collaborative shopping can be challenging.
+
+## Solution
+
+Desire Vault provides a solution to these problems by offering a user-friendly and collaborative product watchlist app. Users can easily create, manage, and share lists of desired products, making it effortless to keep track of items they want to purchase or explore further. With real-time collaborative features powered by Firebase. With Desire Vault, users can stay organized, discover new products, and streamline their shopping experience.
+
+
+## Screenshot
+
+<div >
+  <img src="./public/home-page-1.jpg"/>
+  <img src="./public/createlist-page.jpg"/>
+  <img src="./public/viewlist-page.jpg"/>
+</div>
+
 ## Demo
 
-[Live Demo](#) 
+[Live Demo](https://desire-vault.vercel.app/) 
+
 
 ## Features
 
@@ -34,8 +55,9 @@ Desire Vault is a collaborative product watchlist app developed for a hackathon 
 
 ## Technologies Used
 
+- HTML
+- CSS (Tailwind CSS)
 - React.js
-- Tailwind CSS
 - Firebase (Firestore and Authentication)
 
 ## How to Use
@@ -58,6 +80,13 @@ Desire Vault is a collaborative product watchlist app developed for a hackathon 
 6. Set up Firestore rules to allow read and write access to your watchlist collections.
 7. Your Desire Vault app is now ready to use Firebase for real-time collaborative features.
 
+
+## Team Members
+
+- [khaja sharif](https://github.com/sharif-22/)
+- [kishorekumar k](https://github.com/kishorekumar-kp)
+- [Alex Johnson](https://github.com/SwethaDSalvatore/)
+
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute to Desire Vault, please fork the repository, make your changes, and submit a pull request. Be sure to follow the project's coding standards and guidelines.
@@ -68,8 +97,8 @@ Contributions are welcome! If you'd like to contribute to Desire Vault, please f
 
 ## Acknowledgments
 
-We would like to express our gratitude to all contributors and participants of the collaborative hackathon project. Special thanks to the organizers for providing the opportunity to work on Desire Vault. 
+I want to express my gratitude to all the [Hackerthon Mentors](https://www.youtube.com/live/EjINeXPxjtw?si=xEGLy5UMvKvDXLGE) for the invaluable guidance and support throughout the development of this project. Their insights and feedback have significantly contributed to the success of this endeavor. Special thanks to all my Colleague for their collaborative efforts and constructive suggestions.
 
-As users create and collaborate on watchlists within Desire Vault, we hope it fosters a sense of community and productivity in tracking desired products.
+As I continue to advance in my programming journey, the skills acquired and lessons learned from this project will serve as a solid foundation for future endeavors.
 
----
+--- 
