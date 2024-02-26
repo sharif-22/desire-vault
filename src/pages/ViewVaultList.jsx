@@ -1,25 +1,19 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import VaultCard from "../component/UiComponents/VaultCard";
 
-const Read = () => {
-  const location = useLocation();
-  const formData = location.state?.formData || {}; // Access formData from location state
-
+const ViewVaultList = () => {
   return (
-    <div>
-      <h1>Form Data</h1>
-      <table>
-        <tbody>
-          {Object.entries(formData).map(([key, value]) => (
-            <tr key={key}>
-              <td>{key}</td>
-              <td>{value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="max-w-6xl mx-auto">
+      <h1 className="text-3xl font-medium">My VaultList</h1>
+      <VaultCard
+        desc={
+          "I'm excited to invest in the GT 650 for exhilarating rides and unmatched performance. It's the perfect choice for those seeking both power and style on the road."
+        }
+        price={15000}
+        product={"playstation psp"}
+      />
     </div>
   );
 };
 
-export default Read;
+export default ViewVaultList;
