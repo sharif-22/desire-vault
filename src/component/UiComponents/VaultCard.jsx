@@ -3,10 +3,10 @@ import { LiaRupeeSignSolid } from "react-icons/lia";
 
 const VaultCard = ({ product, desc, price, url }) => {
   return (
-    <div className="max-w-5xl mx-auto bg-white shadow-sm hover:bg-slate-50 hover:shadow-lg duration-500">
+    <div className="max-w-5xl mx-auto bg-slate-200 shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500">
       <div className=" rounded flex flex-col lg:flex-row">
         <img
-          className="lg:w-96 w-full h-full  mx-auto object-cover block"
+          className="lg:w-96 w-full h-full   mx-auto object-cover block"
           src={
             "https://blog.playstation.com/tachyon/2023/08/e5b292c72d1430da822adafb88fdfedead9e0931-scaled.jpg"
           }
