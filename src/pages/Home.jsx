@@ -1,20 +1,18 @@
 import { Link } from "react-router-dom";
-import Carousel from "../component/Carousel";
 
 const Home = () => {
   return (
     <div>
-      {/* <Carousel/> */}
       <div className="">
         <div className="flex items-center justify-center pt-4 pb-4 m-14">
           <svg
-            className="m-8"
             xmlns="http://www.w3.org/2000/svg"
             data-name="Layer 1"
-            width="940.67538"
-            height="433.96214"
+            // width="940.67538"
+            // height="433.96214"
             viewBox="0 0 940.67538 433.96214"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            className="w-2xl h-40 sm:max-w-3xl md:h-96 lg:w-full"
           >
             <path
               d="M329.153,642.83294c-22.523-14.678-38.89925-41.06206-35.54763-67.73564a123.86333,123.86333,0,0,0,76.43469,37.27763c11.2188,1.12255,23.81371,1.203,31.78082,9.181,4.95743,4.964,7.06374,12.21938,7.17209,19.23382.10818,7.01478-1.57724,13.919-3.25174,20.7319l.41151,1.70229C379.28745,662.23116,351.676,657.51093,329.153,642.83294Z"
@@ -338,10 +336,10 @@ const Home = () => {
         </div>
 
         <div>
-          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-800 md:text-5xl lg:text-6xl text-center">
+          <h1 className="mb-4 sm:text-3xl md:text-4xl   text-xl font-extrabold leading-none tracking-tight text-gray-800  lg:text-6xl text-center">
             Turn Dreams into Reality with <span>DesireVault</span>
           </h1>
-          <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 text-center">
+          <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl p-5 sm:px-16 xl:px-48 text-center">
             Categorize your wishlist items, add notes, set priorities, and
             customize them to fit your unique preferences.
           </p>
@@ -360,9 +358,9 @@ const Home = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
@@ -382,7 +380,7 @@ const Home = () => {
                 <path
                   stroke="currentColor"
                   strokeLinecap="round"
-                  strokeLineJoin="round"
+                  strokeLinejoin="round"
                   strokeWidth="2"
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
