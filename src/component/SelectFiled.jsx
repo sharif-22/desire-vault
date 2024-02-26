@@ -11,7 +11,7 @@ const SelectFiled = ({ name, label, register, error }) => {
           id={name}
           name={name}
           {...register}
-          className="w-full mx-auto block py-2 px-3 outline-none rounded shadow-lg placeholder:text-gray-400"
+          className="w-full mx-auto block py-2 px-3 outline-none rounded placeholder:text-gray-400"
         >
           <option value="" >--Select--</option>
           <option value="mobile">Mobile</option>
@@ -20,7 +20,7 @@ const SelectFiled = ({ name, label, register, error }) => {
           <option value="fashion">Fashion</option>
           <option value="others">Others</option>
         </select>
-        {error && <small className="text-[#C21292]">{error.message}</small>}
+        {error && <small className="text-red-500">{error.message}</small>}
       </div>
     </div>
   );

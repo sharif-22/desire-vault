@@ -13,9 +13,9 @@ const InputFieLd = ({ name, label, type, placeholder, register, error }) => {
           id={name}
           placeholder={placeholder}
           {...register}
-          className="w-full block py-2 px-3 outline-none rounded shadow-lg placeholder:text-gray-400"
+          className="w-full block py-2 px-3 outline-none rounded placeholder:text-gray-400"
         />
-        {error && <small className="text-[#C21292]">{error.message}</small>}
+        {error && <small className="text-red-500">{error.message}</small>}
       </div>
     </div>
   );
