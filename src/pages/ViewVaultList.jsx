@@ -42,7 +42,9 @@ const ViewVaultList = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div
+      className={`max-w-6xl mx-auto ${userVault.length < 2 ? "h-screen" : ""}`}
+    >
       <h1 className="text-3xl font-medium capitalize">{userName} VaultList</h1>
       <div className="m-4">
         {userVault.map((items, index) => {
