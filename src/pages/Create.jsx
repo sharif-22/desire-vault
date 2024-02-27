@@ -15,8 +15,8 @@ const Create = () => {
   } = useForm();
 
   const addFireStoreDoc = async (data) => {
-    const { userName } = data;
-    await addDoc(collection(db, userName), data);
+    const { user } = data;
+    await addDoc(collection(db, user), data);
   };
 
   const dataSubmit = (data, e) => {
@@ -37,14 +37,14 @@ const Create = () => {
             <div className="">
               <div>
                 <InputFieLd
-                  name={"userName"}
+                  name={"user"}
                   label="Enter your name "
                   type="text"
                   placeholder="Enter product name here "
-                  register={register("userName", {
+                  register={register("user", {
                     required: "This filed is required",
                   })}
-                  error={errors["userName"]}
+                  error={errors["user"]}
                   required
                 />
                 <InputFieLd
@@ -62,7 +62,7 @@ const Create = () => {
                   className={"w-full"}
                   name={"price"}
                   label="Price"
-                  type="text"
+                  type="number"
                   placeholder="Enter price here..!"
                   register={register("price", {
                     required: "This field is required",
