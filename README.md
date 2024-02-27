@@ -1,4 +1,4 @@
-# Desire Vault - Product Watchlist App
+# Desire-Vault - Product Watchlist App
 
 ## Table of Contents
 
@@ -18,11 +18,11 @@
 
 ## Project Title
 
-Desire Vault
+DesireVault
 
 ## Description
 
-Desire Vault is a collaborative product watchlist app developed for a hackathon project. It allows users to create, manage, and share lists of products they desire to purchase or keep track of. The app is built with React.js for the frontend, Tailwind CSS for styling, and Firebase for real-time collaborative features. Users can add products to their watchlists, mark them as purchased, and collaborate with others on shared lists.
+DesireVault is a collaborative product watchlist app developed for a hackathon project. It allows users to create, manage, and share lists of products they desire to purchase or keep track of. The app is built with React.js for the frontend, Tailwind CSS for styling, and Firebase for real-time collaborative features. Users can add products to their watchlists, mark them as purchased, and collaborate with others on shared lists.
 
 ## Problem
 
@@ -30,7 +30,7 @@ Many people often find themselves interested in various products, whether it's b
 
 ## Solution
 
-Desire Vault provides a solution to these problems by offering a user-friendly and collaborative product watchlist app. Users can easily create, manage, and share lists of desired products, making it effortless to keep track of items they want to purchase or explore further. With real-time collaborative features powered by Firebase. With Desire Vault, users can stay organized, discover new products, and streamline their shopping experience.
+DesireVault provides a solution to these problems by offering a user-friendly and collaborative product watchlist app. Users can easily create, manage, and share lists of desired products, making it effortless to keep track of items they want to purchase or explore further. With real-time collaborative features powered by Firebase. With Desire Vault, users can stay organized, discover new products, and streamline their shopping experience.
 
 
 ## Screenshot
@@ -48,7 +48,7 @@ Desire Vault provides a solution to these problems by offering a user-friendly a
 
 ## Features
 
-- Create, view, update, and delete watchlists of desired products
+- Create, view and delete watchlists of desired products
 - Collaborate with others by sharing watchlists and making updates in real-time
 - Mark products as purchased and keep track of their status
 - User-friendly interface with responsive design for seamless usability on various devices
@@ -85,7 +85,7 @@ Desire Vault provides a solution to these problems by offering a user-friendly a
 
 - [khaja sharif](https://github.com/sharif-22/)
 - [kishorekumar k](https://github.com/kishorekumar-kp)
-- [Alex Johnson](https://github.com/SwethaDSalvatore/)
+- [Swetha Ramesh](https://github.com/SwethaDSalvatore/)
 
 ## Contributing
 
