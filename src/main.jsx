@@ -7,6 +7,7 @@ import Create from "./pages/Create";
 import ViewVaultList from "./pages/ViewVaultList";
 import ErrorPage from "./pages/Error";
 import Product from "./pages/Product";
+import AuthCreate from "./pages/AuthCreate";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/authcreate",
-        element: <AuthCreate/>,
+        element: <AuthCreate />,
       },
       {
         path: "/createVaultList",
