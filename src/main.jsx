@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         element: <Create />,
       },
       {
-        path: "/ViewVaultList/:userName",
+        path: "/ViewVaultList/:user",
         element: <ViewVaultList />,
       },
     ],

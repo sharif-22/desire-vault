@@ -13,47 +13,54 @@ import {
 import db from "../firebase/index";
 
 const ViewVaultList = () => {
-  const { userName } = useParams();
+  const { user } = useParams();
+  console.log(user);
 
   const [userVault, setUserVault] = useState([]);
   const [render, reRender] = useState(false);
+
   useEffect(() => {
     //get overall data
-    const getFirebaseDatas = async () => {
-      const querySnapshot = await getDocs(collection(db, userName));
+    const getFirebaseDatas = async (user) => {
+      const querySnapshot = await getDocs(collection(db, user));
       const data = querySnapshot.docs.map((doc) => {
         const getData = doc.data();
         const getId = doc.id;
         const finalData = { ...getData, id: getId };
-        setUserVault([finalData]);
         return finalData;
       });
+      setUserVault(data);
       if (querySnapshot.docs.length === 0) {
         console.log("norecord exist");
       }
     };
 
-    getFirebaseDatas();
+    getFirebaseDatas(user);
   }, [render]);
 
-  const deleteData = async (userName, id) => {
-    await deleteDoc(doc(db, userName, id));
+  const deleteData = async (deleteCard) => {
+    await deleteDoc(doc(db, deleteCard.user, deleteCard.id));
     reRender(!render);
   };
 
   return (
     <div
-      className={`max-w-6xl mx-auto ${userVault.length < 2 ? "h-screen" : ""}`}
+      className={`max-w-6xl mx-auto ${
+        userVault.length <= 3 ? "h-[90dvh]" : "h-auto"
+      }`}
     >
-      <h1 className="text-3xl font-medium capitalize">{userName} VaultList</h1>
-      <div className="m-4">
-        {userVault.map((items, index) => {
-          console.log(items);
-          const { category, description, price, product, url, userName, id } =
-            items;
-          return (
+      <h1 className="text-3xl font-medium capitalize">{user} VaultList</h1>
+
+      {userVault.map((items, index) => {
+        console.log(items);
+        const { category, description, price, product, url, user, id } = items;
+        return (
+          <div className="m-4">
             <VaultCard
-              deleteData={deleteData(userName, id)}
+              deleteData={() => {
+                console.log("clicked");
+                deleteData({ user: user, id: id });
+              }}
               key={index}
               product={product}
               category={category}
@@ -61,9 +68,9 @@ const ViewVaultList = () => {
               price={price}
               url={url}
             />
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
