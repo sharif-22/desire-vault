@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/index";
 
 const AuthCreate = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
 
   const register = async (e) => {
     e.preventDefault();
