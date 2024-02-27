@@ -1,32 +1,54 @@
 import React from "react";
+import { useState } from "react";
 import { LiaRupeeSignSolid } from "react-icons/lia";
+import { MdDeleteForever, MdEditDocument } from "react-icons/md";
 
-const VaultCard = ({ product, desc, price, url }) => {
+const VaultCard = ({ product, desc, price, url, category, deleteData }) => {
+  const productURL = new URL(url);
+  const domain = productURL.hostname.split(".")[1];
+
+  const [onHover, setOnHover] = useState(false);
+  const showBtn = () => {
+    setOnHover(true);
+  };
+  const hideBtn = () => {
+    setOnHover(false);
+  };
+
   return (
-    <div className="max-w-5xl mx-auto bg-slate-200 shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500">
+    <div
+      onMouseOver={showBtn}
+      onMouseOut={hideBtn}
+      className="max-w-6xl p-2 rounded mx-auto bg-slate-200 shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500  relative"
+    >
       <div className=" rounded flex flex-col lg:flex-row">
-        <img
-          className="lg:w-96 w-full h-full   mx-auto object-cover block"
-          src={
-            "https://blog.playstation.com/tachyon/2023/08/e5b292c72d1430da822adafb88fdfedead9e0931-scaled.jpg"
-          }
-          alt="playstation"
-        />
         <div className="lg:py-4 p-4 flex flex-col gap-3">
           <h2 className="text-2xl capitalize">{product}</h2>
+          <div>
+            <span>category:</span>{" "}
+            <small className="p-1 rounded bg-slate-300">{category}</small>
+          </div>
           <p className="capitalize">{desc}</p>
-          <ol className="flex gap-2 flex-wrap text-xs"></ol>
           <p className="flex items-center font-medium text-base">
             {"price : "}
             <LiaRupeeSignSolid size={16} /> {price}
           </p>
         </div>
       </div>
-      <button className="text-white bg-blue-700 rounded-lg hover:bg-blue-800  py-2 px-3 font-medium rounded-b mt-2 w-full hover:shadow duration-500">
+      <button className="text-white bg-blue-700 rounded-md hover:bg-blue-800  py-2 px-3 font-medium mt-2 w-full hover:shadow duration-500">
         <a href={url} target="_blank">
-          Buynow
+          Buy now in {domain}
         </a>
       </button>
+      {onHover && (
+        <div className="transition flex gap-4 duration-1000 ease-in absolute top-4 right-4">
+          <MdDeleteForever
+            size={32}
+            className=" text-secondary hover:text-red-600 hover:scale-125 hover:drop-shadow-md duration-300 cursor-pointer"
+            onClick={deleteData}
+          />
+        </div>
+      )}
     </div>
   );
 };

@@ -2,10 +2,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./layout/Layout";
-import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Create from "./pages/Create";
 import ViewVaultList from "./pages/ViewVaultList";
 import ErrorPage from "./pages/Error";
+import Product from "./pages/Product";
 
 const router = createBrowserRouter([
   {
@@ -14,15 +15,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Login />,
+      },
+      {
+        path: "/authcreate",
+        element: <AuthCreate/>,
       },
       {
         path: "/createVaultList",
         element: <Create />,
       },
       {
-        path: "/ViewVaultList",
+        path: "/ViewVaultList/:user",
         element: <ViewVaultList />,
+      },
+      {
+        path: "/Product",
+        element: <Product />,
       },
     ],
     errorElement: <ErrorPage />,

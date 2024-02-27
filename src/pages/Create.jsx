@@ -4,7 +4,8 @@ import TextareaField from "../component/TextareaField";
 import SelectFiled from "../component/SelectFiled";
 
 import { collection, addDoc } from "firebase/firestore";
-import db from "../firebase/index";
+import { db, auth } from '/src/firebase/index.js'; // Import both db and auth
+
 
 const Create = () => {
   const {
@@ -15,8 +16,13 @@ const Create = () => {
   } = useForm();
 
   const addFireStoreDoc = async (data) => {
-    const { userName } = data;
-    await addDoc(collection(db, userName), data);
+    const user = auth.currentUser; // Assuming user is authenticated
+    if (user) {
+      const userId = user.uid;
+      await addDoc(collection(db, userId), data);
+    } else {
+      console.error("User is not authenticated.");
+    }
   };
 
   const dataSubmit = (data, e) => {
@@ -37,14 +43,14 @@ const Create = () => {
             <div className="">
               <div>
                 <InputFieLd
-                  name={"userName"}
+                  name={"user"}
                   label="Enter your name "
                   type="text"
                   placeholder="Enter product name here "
-                  register={register("userName", {
+                  register={register("user", {
                     required: "This filed is required",
                   })}
-                  error={errors["userName"]}
+                  error={errors["user"]}
                   required
                 />
                 <InputFieLd
@@ -62,7 +68,7 @@ const Create = () => {
                   className={"w-full"}
                   name={"price"}
                   label="Price"
-                  type="text"
+                  type="number"
                   placeholder="Enter price here..!"
                   register={register("price", {
                     required: "This field is required",
