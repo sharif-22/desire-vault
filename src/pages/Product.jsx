@@ -4,7 +4,7 @@ import VaultCard from "../component/UiComponents/VaultCard";
 
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 
-import db from "../firebase/index";
+import { db } from "../firebase/index";
 
 const Product = () => {
   const [userVault, setUserVault] = useState([]);
