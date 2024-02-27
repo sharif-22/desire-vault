@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import VaultCard from "../component/UiComponents/VaultCard";
 import { useParams } from "react-router-dom";
+import { db } from '../firebase/index'; // Import db as a named import
 
 import {
   collection,
@@ -10,7 +11,7 @@ import {
   doc,
 } from "firebase/firestore";
 
-import db from "../firebase/index";
+
 
 const ViewVaultList = () => {
   const { user } = useParams();
