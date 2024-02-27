@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Create from "./pages/Create";
 import ViewVaultList from "./pages/ViewVaultList";
 import ErrorPage from "./pages/Error";
+import Product from "./pages/Product";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/ViewVaultList/:user",
         element: <ViewVaultList />,
+      },
+      {
+        path: "/Product",
+        element: <Product />,
       },
     ],
     errorElement: <ErrorPage />,
