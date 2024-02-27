@@ -4,7 +4,8 @@ import TextareaField from "../component/TextareaField";
 import SelectFiled from "../component/SelectFiled";
 
 import { collection, addDoc } from "firebase/firestore";
-import db from "../firebase/index";
+import { db, auth } from '/src/firebase/index.js'; // Import both db and auth
+
 
 const Create = () => {
   const {
@@ -15,8 +16,13 @@ const Create = () => {
   } = useForm();
 
   const addFireStoreDoc = async (data) => {
-    const { user } = data;
-    await addDoc(collection(db, user), data);
+    const user = auth.currentUser; // Assuming user is authenticated
+    if (user) {
+      const userId = user.uid;
+      await addDoc(collection(db, userId), data);
+    } else {
+      console.error("User is not authenticated.");
+    }
   };
 
   const dataSubmit = (data, e) => {
