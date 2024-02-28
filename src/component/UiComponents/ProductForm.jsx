@@ -48,7 +48,7 @@ const ProductForm = () => {
   return (
     <>
       <form
-        className="h-fit sticky top-20"
+        className="h-fit sticky top-20 "
         onSubmit={handleSubmit(sendInfoToDB)}
       >
         <div className="sm:max-w-xs lg:w-96 mx-auto  bg-slate-100 p-2 rounded">

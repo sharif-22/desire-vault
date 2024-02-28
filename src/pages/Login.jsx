@@ -38,9 +38,9 @@ const Login = () => {
     } catch (error) {
       console.log(error.message);
       if (error.code === "auth/invalid-credential") {
-        alert("Invalid credentials");
+        alert("Enter your valid credentials");
       } else if (error.code === "auth/invalid-email") {
-        alert("Invalid email");
+        alert("Enter your valid email");
       }
     }
   };
@@ -78,8 +78,8 @@ const Login = () => {
 
   return (
     <div>
-      <section className="bg-gray-50 dark:bg-gray-900 my-4">
-        <div className="p-8 mx-auto max-w-screen-xl h-[95dvh] items-center lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
+      <section className="bg-gray-50 dark:bg-gray-900  pt-10">
+        <div className="p-8 mx-auto max-w-screen-xl items-center lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col gap-8">
             <h1 className="text-3xl font-bold  text-gray-900 lg:text-5xl dark:text-white">
               Turn Dreams into Reality with
@@ -99,21 +99,6 @@ const Login = () => {
               className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
             >
               Read more about our app
-              <svg
-                className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 14 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 5h12m0 0L9 1m4 4L9 9"
-                />
-              </svg>
             </a>
           </div>
           {/* login */}
@@ -136,7 +121,7 @@ const Login = () => {
                   <input
                     type="email"
                     name="email"
-                    id="email"
+                    id="login-email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required
@@ -145,33 +130,6 @@ const Login = () => {
                     }}
                   />
                 </div>
-                {/* <div>
-                  <Input
-                    label="Your email"
-                    type="email"
-                    name="email"
-                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    placeholder="name@company.com"
-                    required
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    onChange={(event) => {
-                      setLoginEmail(event.target.value);
-                    }}
-                  />
-
-                  <Input
-                    label="Your password"
-                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    type="password"
-                    name="email"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
-                    onChange={(event) => {
-                      setLoginPassword(event.target.value);
-                    }}
-                  />
-                </div> */}
                 <div>
                   <label
                     htmlFor="password"
@@ -182,7 +140,7 @@ const Login = () => {
                   <input
                     type="password"
                     name="password"
-                    id="password"
+                    id="login-password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
@@ -207,7 +165,7 @@ const Login = () => {
                       console.log(createAcc);
                       setCreateAcc(!false);
                     }}
-                    className="text-blue-600 hover:underline dark:text-blue-500"
+                    className="text-blue-600 hover:underline dark:text-blue-500 cursor-pointer"
                   >
                     Create account
                   </a>
@@ -266,33 +224,6 @@ const Login = () => {
                     }}
                   />
                 </div>
-                {/* <div>
-                  <Input
-                    label="Your email"
-                    type="email"
-                    name="email"
-                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    placeholder="name@company.com"
-                    required
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    onChange={(event) => {
-                      setLoginEmail(event.target.value);
-                    }}
-                  />
-
-                  <Input
-                    label="Your password"
-                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    type="password"
-                    name="email"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
-                    onChange={(event) => {
-                      setLoginPassword(event.target.value);
-                    }}
-                  />
-                </div> */}
                 <button
                   type="submit"
                   className="w-full block px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -305,11 +236,13 @@ const Login = () => {
                     console.log(createAcc);
                     setCreateAcc(!true);
                   }}
-                  className=" inline-block text-blue-600 hover:underline dark:text-blue-500 text-sm font-medium "
+                  className="cursor-pointer inline-block text-blue-600 hover:underline dark:text-blue-500 text-sm font-semibold "
                 >
                   Login
                 </a>
-                <span className="mx-1">with existing account</span>
+                <span className="mx-1 text-sm text-gray-900 dark:text-white">
+                  with an existing account
+                </span>
               </form>
             </div>
           </div>
