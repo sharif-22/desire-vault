@@ -118,6 +118,9 @@ const Login = () => {
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Hello There!
               </h2>
+              <h2 className="text-xl font-bold text-blue-500 dark:text-blue-500 ">
+                Login to continue
+              </h2>
               <form className="mt-8 space-y-6" onSubmit={login}>
                 <div>
                   <label
@@ -298,7 +301,7 @@ const Login = () => {
                     console.log(createAcc);
                     setCreateAcc(!true);
                   }}
-                  className=" inline-block text-blue-600 hover:underline dark:text-blue-500"
+                  className=" inline-block text-blue-600 hover:underline dark:text-blue-500 text-sm font-medium "
                 >
                   Login
                 </a>
