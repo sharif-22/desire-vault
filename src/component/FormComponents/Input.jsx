@@ -1,4 +1,3 @@
-import React from "react";
 import propTypes from "prop-types";
 
 const Input = ({
@@ -8,14 +7,17 @@ const Input = ({
   register,
   error,
   required,
+  className,
+  handleOnChange,
   type = "text",
   width = "w-full",
-  bgColor = "bg-slate-200",
+  labelclassName = "font-medium text-base text-zinc-700"
+  // bgColor = "bg-slate-200",
 }) => {
   return (
     <div className={`flex flex-col p-3 gap-y-2 ${width}`}>
-      <div>
-        <label className="font-medium text-base text-zinc-700" htmlFor={name}>
+      <div className="flex">
+        <label className={labelclassName } htmlFor={name}>
           {label}
         </label>
         {required ? (
@@ -25,12 +27,14 @@ const Input = ({
         )}
       </div>
       <input
-        className={`outline-none rounded ${bgColor} p-2`}
+        className={className}
+        // className={`outline-none rounded ${bgColor} p-2`}
         type={type}
         name={name}
         id={name}
         {...register}
         placeholder={placeholder}
+        onChange={handleOnChange}
       />
       {error && (
         <small className="text-sm text-red-500">{error.message}</small>
@@ -48,7 +52,10 @@ Input.propTypes = {
   error: propTypes.object,
   width:propTypes.string,
   required:propTypes.bool,
-  bgColor:propTypes.string
+  bgColor:propTypes.string,
+  className:propTypes.string,
+  labelclassName:propTypes.string,
+  handleOnChange:propTypes.func
 };
 
 export default Input;
