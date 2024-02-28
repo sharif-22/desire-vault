@@ -2,8 +2,17 @@ import InputField from "../FormComponents/Input";
 import TextAreaInput from "../FormComponents/TextAreaInput";
 import ButtonInput from "../FormComponents/ButtonInput";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+
+import { Vault } from "../../Context";
+
+import { useContext } from "react";
+
+import { collection, addDoc } from "firebase/firestore";
+
+import { db } from "../../firebase/index";
 
 const formSchema = z.object({
   productName: z.string().min(3).max(15),
@@ -15,25 +24,34 @@ const formSchema = z.object({
 });
 
 const ProductForm = () => {
+  const { uid } = useParams();
+  const [userUID, render, reRender] = useContext(Vault);
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(formSchema),
   });
 
-  const getValues = (data) => {
-    console.log("Getting values from form submit: ", data);
+  const sendInfoToDB = (value) => {
+    // console.log(value);
+    const addFireStoreDoc = async () => {
+      await addDoc(collection(db, uid), value);
+    };
+    addFireStoreDoc();
+    reRender(!render);
+    reset();
   };
+
   return (
     <>
       <form
-        action=""
         className="h-fit sticky top-20"
-        onSubmit={handleSubmit(getValues)}
+        onSubmit={handleSubmit(sendInfoToDB)}
       >
-        <div className="max-w-xs xl:max-w-sm bg-slate-100 p-2 rounded">
+        <div className="sm:max-w-xs lg:w-96 mx-auto  bg-slate-100 p-2 rounded">
           <InputField
             label="Product Name"
             placeholder="Enter Product name"
