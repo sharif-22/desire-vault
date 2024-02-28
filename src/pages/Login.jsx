@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase/index";
 import { Vault } from "../Context";
@@ -69,6 +70,8 @@ const Login = () => {
         alert("Enter a valid email");
       } else if (error.code === "auth/weak-password") {
         alert("Password should be a minimum of 6 characters");
+      } else if (error.code === "auth/email-already-in-use") {
+        alert("Already created, Please login!!");
       }
     }
   };
