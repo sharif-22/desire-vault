@@ -36,8 +36,7 @@ DesireVault provides a solution to these problems by offering a user-friendly an
 ## Screenshot
 
 <div >
-  <img src="./public/home-page-1.jpg"/>
-  <img src="./public/createlist-page.jpg"/>
+  <img src="./public/login-page.JPG"/>
   <img src="./public/viewlist-page.jpg"/>
 </div>
 
