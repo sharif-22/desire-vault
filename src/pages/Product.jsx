@@ -40,7 +40,11 @@ const Product = () => {
   };
 
   return (
-    <div className="lg:max-w-6xl 2xl:max-w-7xl mx-auto p-5 xl:p-0 flex flex-row-reverse">
+    <div
+      className={`lg:max-w-6xl 2xl:max-w-7xl mt-20 mx-auto p-5 xl:p-0 flex flex-row-reverse ${
+        userVault.length > 5 ? "h-auto" : "h-[90dvh]"
+      }`}
+    >
       <div className="sticky top-5 w-96">
         <ProductForm />
       </div>
