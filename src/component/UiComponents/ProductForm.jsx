@@ -51,7 +51,7 @@ const ProductForm = () => {
         className="h-fit sticky top-20"
         onSubmit={handleSubmit(sendInfoToDB)}
       >
-        <div className="max-w-xs xl:max-w-sm bg-slate-100 p-2 rounded">
+        <div className="sm:max-w-xs lg:w-96 mx-auto  bg-slate-100 p-2 rounded">
           <InputField
             label="Product Name"
             placeholder="Enter Product name"
