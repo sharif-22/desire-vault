@@ -8,6 +8,7 @@ const TextareaField = ({
   error,
   cols,
   rows,
+  type
 }) => {
   return (
     <div>
@@ -21,6 +22,7 @@ const TextareaField = ({
             cols={cols}
             rows={rows}
             id={name}
+            type={type}
             placeholder={placeholder}
             {...register}
             className="w-full block py-2 px-3 outline-none rounded placeholder:text-gray-400"
