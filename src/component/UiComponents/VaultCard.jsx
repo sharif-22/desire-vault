@@ -3,9 +3,16 @@ import { useState } from "react";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { MdDeleteForever, MdEditDocument } from "react-icons/md";
 
-const VaultCard = ({ product, desc, price, url, category, deleteData }) => {
-  const productURL = new URL(url);
-  const domain = productURL.hostname.split(".")[1];
+const VaultCard = ({
+  product,
+  desc,
+  price,
+  productURL,
+  category,
+  deleteData,
+}) => {
+  const productLink = new URL(productURL);
+  const domain = productLink.hostname.split(".")[1];
 
   const [onHover, setOnHover] = useState(false);
   const showBtn = () => {
@@ -24,10 +31,10 @@ const VaultCard = ({ product, desc, price, url, category, deleteData }) => {
       <div className=" rounded flex flex-col lg:flex-row">
         <div className="lg:py-4 p-4 flex flex-col gap-3">
           <h2 className="text-2xl capitalize">{product}</h2>
-          <div>
+          {/* <div>
             <span>category:</span>{" "}
             <small className="p-1 rounded bg-slate-300">{category}</small>
-          </div>
+          </div> */}
           <p className="capitalize">{desc}</p>
           <p className="flex items-center font-medium text-base">
             {"price : "}
@@ -36,7 +43,7 @@ const VaultCard = ({ product, desc, price, url, category, deleteData }) => {
         </div>
       </div>
       <button className="text-white bg-blue-700 rounded-md hover:bg-blue-800  py-2 px-3 font-medium mt-2 w-full hover:shadow duration-500">
-        <a href={url} target="_blank">
+        <a href={productURL} target="_blank">
           Buy now in {domain}
         </a>
       </button>
