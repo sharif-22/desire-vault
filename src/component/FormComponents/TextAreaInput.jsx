@@ -9,9 +9,14 @@ const TextAreaInput = ({
   value,
   type,
   width,
+  register,
   row,
   handleOnChange,
+<<<<<<< HEAD
   error
+=======
+  error,
+>>>>>>> f35405d4968915f0e4ac79085f15a89d13259164
 }) => {
   return (
     <div className={`flex flex-col p-3 gap-y-2 ${width}`}>
@@ -30,10 +35,15 @@ const TextAreaInput = ({
         onChange={handleOnChange}
         value={value}
         rows={row}
+        {...register}
       ></textarea>
+<<<<<<< HEAD
       {error && (
         <small className="text-sm text-red-500">{error.message}</small>
       )}
+=======
+      {error && <small className="text-sm text-red-500">{error.message}</small>}
+>>>>>>> f35405d4968915f0e4ac79085f15a89d13259164
     </div>
   );
 };

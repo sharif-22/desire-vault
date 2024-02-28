@@ -7,14 +7,12 @@ import { z } from "zod";
 
 const formSchema = z.object({
   productName: z.string().min(3).max(15),
-  price: z.number().min(1).max(8),
+  price: z.string().min(1).max(8),
   productURL: z.optional(z.string().trim().url({ message: "Invalid URL" })),
   desc: z
     .string()
-    .min(15, { message: "Description must be at least 15 characters" })
-    .max(30, { message: "Description must be no more than 30 characters" }),
+    .min(15, { message: "Description must be at least 15 characters" }),
 });
-
 
 const ProductForm = () => {
   const {
@@ -25,8 +23,7 @@ const ProductForm = () => {
     resolver: zodResolver(formSchema),
   });
 
-  const getValues = (e, data) => {
-    e.preventDefault();
+  const getValues = (data) => {
     console.log("Getting values from form submit: ", data);
   };
   return (
@@ -91,8 +88,6 @@ const ProductForm = () => {
 };
 
 export default ProductForm;
-
-
 
 // const inputs = [
 //   {
