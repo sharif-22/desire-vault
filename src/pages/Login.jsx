@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/index";
 import { Vault } from "../Context";
+import Input from "../component/FormComponents/Input";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -134,6 +135,33 @@ const Login = () => {
                     }}
                   />
                 </div>
+                {/* <div>
+                  <Input
+                    label="Your email"
+                    type="email"
+                    name="email"
+                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    placeholder="name@company.com"
+                    required
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    onChange={(event) => {
+                      setLoginEmail(event.target.value);
+                    }}
+                  />
+
+                  <Input
+                    label="Your password"
+                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    type="password"
+                    name="email"
+                    placeholder="••••••••"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                    onChange={(event) => {
+                      setLoginPassword(event.target.value);
+                    }}
+                  />
+                </div> */}
                 <div>
                   <label
                     htmlFor="password"
@@ -188,7 +216,7 @@ const Login = () => {
                 Create Your account to continue
               </h2>
 
-              <form className="mt-8 space-y-6" onSubmit={register}>
+              <form className="mt-8 space-y-3" onSubmit={register}>
                 {/* register */}
                 <div>
                   <label
@@ -228,6 +256,33 @@ const Login = () => {
                     }}
                   />
                 </div>
+                {/* <div>
+                  <Input
+                    label="Your email"
+                    type="email"
+                    name="email"
+                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    placeholder="name@company.com"
+                    required
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    onChange={(event) => {
+                      setLoginEmail(event.target.value);
+                    }}
+                  />
+
+                  <Input
+                    label="Your password"
+                    labelclassName="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    type="password"
+                    name="email"
+                    placeholder="••••••••"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                    onChange={(event) => {
+                      setLoginPassword(event.target.value);
+                    }}
+                  />
+                </div> */}
                 <button
                   type="submit"
                   className="w-full block px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

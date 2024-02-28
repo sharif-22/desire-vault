@@ -4,12 +4,7 @@ import VaultCard from "../component/UiComponents/VaultCard";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/index";
 
-<<<<<<< HEAD
-
-
-=======
 import { useParams } from "react-router-dom";
->>>>>>> f35405d4968915f0e4ac79085f15a89d13259164
 
 const Product = () => {
   const { uid } = useParams();
