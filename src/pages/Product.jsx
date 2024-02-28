@@ -15,7 +15,7 @@ const Product = () => {
   useEffect(() => {
     //get overall data
     const getFirebaseDatas = async (user) => {
-      const querySnapshot = await getDocs(collection(db, user));
+      const querySnapshot = await getDocs(collection(db, uid));
       const data = querySnapshot.docs.map((doc) => {
         const getData = doc.data();
         const getId = doc.id;
@@ -28,7 +28,7 @@ const Product = () => {
       }
     };
 
-    getFirebaseDatas("sharif");
+    getFirebaseDatas(uid);
   }, [render]);
 
   const deleteData = async (deleteCard) => {
@@ -43,21 +43,20 @@ const Product = () => {
       </div>
       <div>
         {userVault.map((items, index) => {
-          const { category, description, price, product, url, user, id } =
-            items;
+          console.log(items);
+          const { productName, price, desc, productURL, id } = items;
           return (
             <div key={index} className="mb-4 mx-4">
               <VaultCard
                 deleteData={() => {
                   console.log("clicked");
-                  deleteData({ user: user, id: id });
+                  deleteData({ user: uid, id: id });
                 }}
                 key={index}
-                product={product}
-                category={category}
-                desc={description}
+                product={productName}
+                productURL={productURL}
+                desc={desc}
                 price={price}
-                url={url}
               />
             </div>
           );
