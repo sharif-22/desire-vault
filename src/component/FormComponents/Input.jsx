@@ -11,13 +11,13 @@ const Input = ({
   handleOnChange,
   type = "text",
   width = "w-full",
-  labelclassName = "font-medium text-base text-zinc-700"
+  labelclassName = "font-medium text-base text-zinc-700",
   // bgColor = "bg-slate-200",
 }) => {
   return (
     <div className={`flex flex-col p-3 gap-y-2 ${width}`}>
       <div className="flex">
-        <label className={labelclassName } htmlFor={name}>
+        <label className={labelclassName} htmlFor={name}>
           {label}
         </label>
         {required ? (
@@ -27,8 +27,8 @@ const Input = ({
         )}
       </div>
       <input
-        className={className}
-        // className={`outline-none rounded ${bgColor} p-2`}
+        // className={className}
+        className={`outline-none rounded p-2`}
         type={type}
         name={name}
         id={name}
@@ -36,9 +36,7 @@ const Input = ({
         placeholder={placeholder}
         onChange={handleOnChange}
       />
-      {error && (
-        <small className="text-sm text-red-500">{error.message}</small>
-      )}
+      {error && <small className="text-sm text-red-500">{error.message}</small>}
     </div>
   );
 };
@@ -50,12 +48,12 @@ Input.propTypes = {
   placeholder: propTypes.string,
   register: propTypes.object,
   error: propTypes.object,
-  width:propTypes.string,
-  required:propTypes.bool,
-  bgColor:propTypes.string,
-  className:propTypes.string,
-  labelclassName:propTypes.string,
-  handleOnChange:propTypes.func
+  width: propTypes.string,
+  required: propTypes.bool,
+  bgColor: propTypes.string,
+  className: propTypes.string,
+  labelclassName: propTypes.string,
+  handleOnChange: propTypes.func,
 };
 
 export default Input;

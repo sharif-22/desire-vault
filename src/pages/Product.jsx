@@ -3,6 +3,9 @@ import ProductForm from "../component/UiComponents/ProductForm";
 import VaultCard from "../component/UiComponents/VaultCard";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/index";
+import { Vault } from "../Context";
+
+import { useContext } from "react";
 
 import { useParams } from "react-router-dom";
 
@@ -10,7 +13,7 @@ const Product = () => {
   const { uid } = useParams();
   console.log(uid);
   const [userVault, setUserVault] = useState([]);
-  const [render, reRender] = useState(false);
+  const [userUID, render, reRender] = useContext(Vault);
 
   useEffect(() => {
     //get overall data
@@ -37,16 +40,16 @@ const Product = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-5 xl:p-0 grid grid-flow-col ">
-      <div className="sticky top-5">
+    <div className="lg:max-w-6xl 2xl:max-w-7xl mx-auto p-5 xl:p-0 flex flex-row-reverse">
+      <div className="sticky top-5 w-96">
         <ProductForm />
       </div>
-      <div>
+      <div className="w-full">
         {userVault.map((items, index) => {
           console.log(items);
           const { productName, price, desc, productURL, id } = items;
           return (
-            <div key={index} className="mb-4 mx-4">
+            <div key={index} className="mb-4 mx-4 w-[95%] flex-1">
               <VaultCard
                 deleteData={() => {
                   console.log("clicked");

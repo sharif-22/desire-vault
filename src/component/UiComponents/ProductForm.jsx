@@ -6,6 +6,10 @@ import { useParams } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+import { Vault } from "../../Context";
+
+import { useContext } from "react";
+
 import { collection, addDoc } from "firebase/firestore";
 
 import { db } from "../../firebase/index";
@@ -21,7 +25,7 @@ const formSchema = z.object({
 
 const ProductForm = () => {
   const { uid } = useParams();
-
+  const [userUID, render, reRender] = useContext(Vault);
   const {
     handleSubmit,
     register,
@@ -37,6 +41,7 @@ const ProductForm = () => {
       await addDoc(collection(db, uid), value);
     };
     addFireStoreDoc();
+    reRender(!render);
     reset();
   };
 
@@ -53,7 +58,6 @@ const ProductForm = () => {
             name="productName"
             type="text"
             width="w-full"
-            className="outline-none rounded bg-slate-200 p-2"
             register={register("productName")}
             error={errors.productName}
             requried
@@ -64,7 +68,6 @@ const ProductForm = () => {
             name="price"
             type="number"
             width="w-full"
-            className="outline-none rounded bg-slate-200 p-2"
             requried
             register={register("price")}
             error={errors.price}
@@ -75,7 +78,6 @@ const ProductForm = () => {
             name="productURL"
             type="url"
             width="w-full"
-            className="outline-none rounded bg-slate-200 p-2"
             requried
             register={register("productURL")}
             error={errors.productURL}
