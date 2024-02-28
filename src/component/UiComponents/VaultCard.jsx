@@ -26,7 +26,7 @@ const VaultCard = ({
     <div
       onMouseOver={showBtn}
       onMouseOut={hideBtn}
-      className="max-w-6xl p-2 rounded mx-auto bg-slate-200 shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500  relative"
+      className="overflow-hidden h-fit lg:w-[95%] p-2 rounded mx-auto bg-slate-200 shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500 relative"
     >
       <div className=" rounded flex flex-col lg:flex-row">
         <div className="lg:py-4 p-4 flex flex-col gap-3">
@@ -35,7 +35,7 @@ const VaultCard = ({
             <span>category:</span>{" "}
             <small className="p-1 rounded bg-slate-300">{category}</small>
           </div> */}
-          <p className="capitalize">{desc}</p>
+          <p className="capitalize text-wrap">{desc}</p>
           <p className="flex items-center font-medium text-base">
             {"price : "}
             <LiaRupeeSignSolid size={16} /> {price}

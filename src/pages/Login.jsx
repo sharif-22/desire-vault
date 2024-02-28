@@ -8,7 +8,6 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/index";
 import { Vault } from "../Context";
-import Input from "../component/FormComponents/Input";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -79,16 +78,21 @@ const Login = () => {
 
   return (
     <div>
-      <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="p-8 mx-auto max-w-screen-xl lg:h-screen items-center lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
+      <section className="bg-gray-50 dark:bg-gray-900 my-4">
+        <div className="p-8 mx-auto max-w-screen-xl h-[95dvh] items-center lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col gap-8">
-            <h1 className="text-3xl font-bold tracking-tight leading-none text-gray-900 lg:text-5xl dark:text-white">
+            <h1 className="text-3xl font-bold  text-gray-900 lg:text-5xl dark:text-white">
               Turn Dreams into Reality with
-              <span className="text-blue-500"> DesireVault</span>
+              <span className="text-blue-500 items-center flex">
+                {" "}
+                DesireVault{" "}
+              </span>
             </h1>
             <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-              Categorize your wishlist items, add notes, set priorities, and
-              customize them to fit your unique preferences.
+              Easily track and manage all your desired products in one place,
+              ensuring you never miss out on a purchase. Simplify your shopping
+              journey and turn wishes into reality with our intuitive and
+              convenient app.
             </p>
             <a
               href="https://github.com/SwethaDSalvatore/desire-vault/blob/main/README.md"
@@ -305,6 +309,7 @@ const Login = () => {
                 >
                   Login
                 </a>
+                <span className="mx-1">with existing account</span>
               </form>
             </div>
           </div>
