@@ -4,10 +4,11 @@ import VaultCard from "../component/UiComponents/VaultCard";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase/index";
 
-
-
+import { useParams } from "react-router-dom";
 
 const Product = () => {
+  const { uid } = useParams();
+  console.log(uid);
   const [userVault, setUserVault] = useState([]);
   const [render, reRender] = useState(false);
 

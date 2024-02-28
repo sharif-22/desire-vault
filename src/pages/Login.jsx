@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
 import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../firebase/index";
+import { Vault } from "../Context";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [user, setUser] = useState(null);
+  let [userUID] = useContext(Vault);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -19,6 +21,7 @@ const Login = () => {
     return () => unsubscribe();
   }, []);
 
+  const Navigate = useNavigate();
   const login = async (e) => {
     e.preventDefault();
     try {
@@ -28,9 +31,9 @@ const Login = () => {
         loginPassword
       );
       const newUser = userCredential.user;
-      console.log(newUser);
-      // Redirect to createproduct page
-      window.location.href = "/createVaultList";
+
+      userUID = newUser.uid;
+      Navigate(`/product/${userUID}`);
     } catch (error) {
       console.log(error.message);
       if (error.code === "auth/invalid-credential") {

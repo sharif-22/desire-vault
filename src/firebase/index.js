@@ -3,15 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-
 const firebaseConfig = {
-  apiKey: "AIzaSyAQJ1t6h9bDLNUc0ZqQKSMXZwPT-wITIsQ",
-  authDomain: "desire-vault-auth.firebaseapp.com",
-  projectId: "desire-vault-auth",
-  storageBucket: "desire-vault-auth.appspot.com",
-  messagingSenderId: "552758950354",
-  appId: "1:552758950354:web:579e7ce6ca82b7ded9700b",
-  measurementId: "G-C9D8QBDXGY"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
