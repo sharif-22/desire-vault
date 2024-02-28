@@ -1,6 +1,6 @@
 // Carousel.js
 
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,7 +8,7 @@ const Carousel = () => {
   const images = [
     "https://i.pinimg.com/564x/22/67/69/2267698a25d0a97b1c59b67629e84781.jpg",
     "https://i.pinimg.com/564x/6f/0f/f1/6f0ff1b8cce396552ca06c108ed3f83b.jpg",
-    "https://i.pinimg.com/564x/eb/ed/ac/ebedac189a141e86a36280c83f975cb5.jpg"
+    "https://i.pinimg.com/564x/eb/ed/ac/ebedac189a141e86a36280c83f975cb5.jpg",
   ];
 
   const prevSlide = () => {
@@ -26,7 +26,7 @@ const Carousel = () => {
           <div
             key={index}
             className={`absolute w-full h-full ${
-              index === currentSlide ? '' : 'hidden'
+              index === currentSlide ? "" : "hidden"
             } transition-opacity duration-500 ease-in-out`}
           >
             <img

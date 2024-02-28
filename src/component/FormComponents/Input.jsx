@@ -1,12 +1,13 @@
 import React from "react";
+import propTypes from "prop-types";
 
 const Input = ({
   label,
   name,
   placeholder,
-  required,
   register,
   error,
+  required,
   type = "text",
   width = "w-full",
   bgColor = "bg-slate-200",
@@ -32,10 +33,22 @@ const Input = ({
         placeholder={placeholder}
       />
       {error && (
-        <small className="text-sm text-red-500">{error?.message}</small>
+        <small className="text-sm text-red-500">{error.message}</small>
       )}
     </div>
   );
+};
+
+Input.propTypes = {
+  label: propTypes.string,
+  name: propTypes.string,
+  type: propTypes.string,
+  placeholder: propTypes.string,
+  register: propTypes.object,
+  error: propTypes.object,
+  width:propTypes.string,
+  required:propTypes.bool,
+  bgColor:propTypes.string
 };
 
 export default Input;

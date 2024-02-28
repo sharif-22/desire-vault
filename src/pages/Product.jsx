@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductForm from "../component/UiComponents/ProductForm";
 import VaultCard from "../component/UiComponents/VaultCard";
-
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { db } from "../firebase/index";
 
-import db from "../firebase/index";
+import { useParams } from "react-router-dom";
 
 const Product = () => {
+  const { uid } = useParams();
+  console.log(uid);
   const [userVault, setUserVault] = useState([]);
   const [render, reRender] = useState(false);
 
@@ -44,7 +46,7 @@ const Product = () => {
           const { category, description, price, product, url, user, id } =
             items;
           return (
-            <div className="mb-4 mx-4">
+            <div key={index} className="mb-4 mx-4">
               <VaultCard
                 deleteData={() => {
                   console.log("clicked");
