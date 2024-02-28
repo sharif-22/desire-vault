@@ -3,23 +3,7 @@ import { Skeleton } from "antd";
 const AntSkeletonText = () => {
   return (
     <>
-      <div className="space-y-4 w-[300px] lg:w-[400px] h-48">
-        <Skeleton
-          paragraph={{
-            rows: 5,
-          }}
-          active={true}
-        />
-      </div>
-      <div className="space-y-4 w-[300px] lg:w-[400px] h-48">
-        <Skeleton
-          paragraph={{
-            rows: 5,
-          }}
-          active={true}
-        />
-      </div>
-      <div className="space-y-4 w-[300px] lg:w-[400px] h-48">
+      <div className="flex  mx-auto  lg:p-20  w-[300px]  md:w-[600px] lg:w-full h-48">
         <Skeleton
           paragraph={{
             rows: 5,
@@ -37,14 +21,9 @@ const AntSkeletonBtn = () => {
 
 export { AntSkeletonText, AntSkeletonBtn };
 
-
-
-
 // import { useEffect, useState } from "react"
 
 // import spinimg from "../../../public/Spinner.svg"
-
-
 
 // const SpinLoader = () => {
 //     const [text , setText] = useState('');
