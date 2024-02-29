@@ -78,15 +78,12 @@ const Login = () => {
 
   return (
     <div>
-      <section className="bg-gray-50 dark:bg-gray-900  pt-10">
+      <section className="bg-gray-50 dark:bg-gray-900 lg:h-screen flex pt-16">
         <div className="p-8 mx-auto max-w-screen-xl items-center lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex flex-col gap-8">
             <h1 className="text-3xl font-bold  text-gray-900 lg:text-5xl dark:text-white">
               Turn Dreams into Reality with
-              <span className="text-blue-500 items-center flex">
-                {" "}
-                DesireVault{" "}
-              </span>
+              <span className="text-blue-500"> DesireVault </span>
             </h1>
             <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
               Easily track and manage all your desired products in one place,
@@ -103,14 +100,14 @@ const Login = () => {
           </div>
           {/* login */}
           <div className={createAcc ? "hidden" : "block"}>
-            <div className="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow-xl dark:bg-gray-800">
+            <div className="w-full lg:max-w-xl p-6 space-y-4 sm:p-8 bg-white rounded-lg shadow-xl dark:bg-gray-800">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Hello There!
               </h2>
               <h2 className="text-xl font-bold text-blue-500 dark:text-blue-500 ">
                 Login to continue
               </h2>
-              <form className="mt-8 space-y-6" onSubmit={login}>
+              <form className="space-y-6" onSubmit={login}>
                 <div>
                   <label
                     htmlFor="email"
@@ -149,15 +146,11 @@ const Login = () => {
                     }}
                   />
                 </div>
-                <div className="flex space-x-4">
-                  <button
-                    type="submit"
-                    className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    onClick={login}
-                  >
+                <button type="submit" onClick={login}>
+                  <div className="block px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Login to your account
-                  </button>
-                </div>
+                  </div>
+                </button>
                 <div className="text-sm font-medium text-gray-900 dark:text-white">
                   Not registered yet?{" "}
                   <a

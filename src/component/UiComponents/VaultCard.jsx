@@ -51,7 +51,7 @@ const VaultCard = ({
         <div className="transition flex gap-4 duration-1000 ease-in absolute top-4 right-4">
           <MdDeleteForever
             size={32}
-            className=" text-secondary hover:text-red-600 hover:scale-125 hover:drop-shadow-md duration-300 cursor-pointer"
+            className=" text-black hover:text-red-600 hover:scale-125 hover:drop-shadow-md duration-300 cursor-pointer"
             onClick={deleteData}
           />
         </div>
