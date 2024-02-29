@@ -58,13 +58,13 @@ const Product = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center md:ml-5 pt-5 px-5 ">
-        <p className="bg-slate-700 text-sm md:text-xl mt-20 w-full  lg:w-3/4 mx-auto dark:bg-gray-600 text-white py-4 px-10">
-          Tottal amount of your vault is: ₹ {sum}
+      {sum > 0 && (
+        <p className="w-full mx-auto my-3 py-4 px-5 bg-slate-200 dark:bg-slate-700 dark:text-white text-sm md:text-xl lg:max-w-7xl rounded">
+          We just need ₹ {sum.toLocaleString()} to grab your desired products
         </p>
-      </div>
+      )}
       <div
-        className={`lg:max-w-6xl 2xl:max-w-7xl pt-16 mx-auto  flex lg:flex-row-reverse flex-col-reverse ${
+        className={`lg:max-w-6xl 2xl:max-w-7xl py-4 mx-auto  flex lg:flex-row-reverse flex-col-reverse ${
           userVault.length > 4 ? "h-auto" : "lg:h-screen"
         }`}
       >
@@ -77,11 +77,11 @@ const Product = () => {
           <div className="flex flex-col justify-center items-center mx-auto">
             <img
               src="../pngdata.png"
-              alt=""
+              alt="no data"
               className="items-center w-40 h-40"
             />
             <p className="text-2xl font-medium text-gray-600">
-              There is no data in Desire Vault
+              your Desire vault is empty add products to track
             </p>
           </div>
         ) : (
@@ -90,8 +90,9 @@ const Product = () => {
             {userVault.map((items, index) => {
               // console.log(items);
               const { productName, price, desc, productURL, id } = items;
+              let localString = parseInt(price).toLocaleString();
               return (
-                <div key={index} className="mb-4 mx-4 flex-1">
+                <div key={index} className="mb-4 mr-3 flex-1">
                   <VaultCard
                     deleteData={() => {
                       console.log("clicked");
@@ -101,7 +102,7 @@ const Product = () => {
                     product={productName}
                     productURL={productURL}
                     desc={desc}
-                    price={price}
+                    price={localString}
                   />
                 </div>
               );

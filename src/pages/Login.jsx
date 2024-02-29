@@ -1,14 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import {
   signInWithEmailAndPassword,
-  signOut,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase/index";
 import { Vault } from "../Context";
-import Input from "../component/FormComponents/Input";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -35,7 +33,7 @@ const Login = () => {
       const newUser = userCredential.user;
 
       userUID = newUser.uid;
-      Navigate(`/product/${userUID}`);
+      Navigate(`/${userUID}`);
     } catch (error) {
       console.log(error.message);
       if (error.code === "auth/invalid-credential") {

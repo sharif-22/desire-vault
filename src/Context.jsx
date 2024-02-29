@@ -1,6 +1,5 @@
 import React from "react";
-import { createContext, useState, useEffect } from "react";
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { createContext, useState } from "react";
 export const Vault = createContext();
 
 const Context = ({ children }) => {

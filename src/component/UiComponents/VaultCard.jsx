@@ -27,7 +27,7 @@ const VaultCard = ({
     <div
       onMouseOver={showBtn}
       onMouseOut={hideBtn}
-      className="overflow-hidden h-fit lg:w-[95%] p-2 rounded mx-auto bg-slate-200 dark:bg-slate-700 dark:text-white shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500 relative"
+      className="overflow-hidden h-fit lg:w-full p-2 rounded mx-auto bg-slate-200 dark:bg-slate-700 dark:text-white shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500 relative"
     >
       <div className=" rounded flex flex-col lg:flex-row">
         <div className="lg:py-4 p-4 flex flex-col gap-3">

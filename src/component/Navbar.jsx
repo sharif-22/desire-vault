@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/index";
-
+import { FcSafe } from "react-icons/fc";
 const Navbar = () => {
   const Location = useLocation();
   const Navigate = useNavigate();
@@ -34,20 +34,21 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div className="sticky top-0 z-10">
+      <nav className="bg-white dark:bg-gray-900 w-full start-0 border-b border-gray-200 dark:border-gray-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
             to={"/"}
             className="flex items-center space-x-3 rtl:space-x-reverse "
           >
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center flex items-center gap-2 text-2xl font-semibold whitespace-nowrap dark:text-white">
               DesireVault
-              <img
+              {/* <img
                 src="/vault-logo.png"
                 alt="logo"
                 className="w-12 inline-block mx-2"
-              />
+              /> */}
+              <FcSafe size={40} />
             </span>
           </Link>
 
@@ -72,7 +73,7 @@ const Navbar = () => {
 
               {/* sun icon */}
               <svg
-                className="daisy-swap-on fill-current w-8 h-8 text-white"
+                className="daisy-swap-on fill-current w-8 h-8 dark:text-white text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
