@@ -80,7 +80,7 @@ const Product = () => {
               alt="no data"
               className="items-center w-40 h-40"
             />
-            <p className="text-2xl font-medium text-gray-600">
+            <p className="text-2xl font-medium text-gray-600 mx-auto">
               your Desire vault is empty add products to track
             </p>
           </div>
