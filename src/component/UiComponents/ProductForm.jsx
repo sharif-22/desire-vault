@@ -58,6 +58,7 @@ const ProductForm = () => {
             name="productName"
             type="text"
             width="w-full"
+            className="outline-none rounded bg-slate-200 p-2"
             register={register("productName")}
             error={errors.productName}
             requried
@@ -68,6 +69,7 @@ const ProductForm = () => {
             name="price"
             type="number"
             width="w-full"
+            className="outline-none rounded bg-slate-200 p-2"
             requried
             register={register("price")}
             error={errors.price}
@@ -78,6 +80,7 @@ const ProductForm = () => {
             name="productURL"
             type="url"
             width="w-full"
+            className="outline-none rounded bg-slate-200 p-2"
             requried
             register={register("productURL")}
             error={errors.productURL}

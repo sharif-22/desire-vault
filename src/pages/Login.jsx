@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/index";
 import { Vault } from "../Context";
+import Input from "../component/FormComponents/Input";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");

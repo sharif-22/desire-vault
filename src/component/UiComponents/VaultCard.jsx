@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { LiaRupeeSignSolid } from "react-icons/lia";
 import { MdDeleteForever, MdEditDocument } from "react-icons/md";
+import propTypes from "prop-types";
 
 const VaultCard = ({
   product,
@@ -58,6 +59,16 @@ const VaultCard = ({
       )}
     </div>
   );
+};
+
+VaultCard.propTypes = {
+  product: propTypes.string,
+  desc: propTypes.string,
+  price: propTypes.string,
+  productURL: propTypes.string,
+  deleteData: propTypes.string,
+  category: propTypes.string,
+
 };
 
 export default VaultCard;
