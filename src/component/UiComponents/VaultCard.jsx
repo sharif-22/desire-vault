@@ -27,7 +27,7 @@ const VaultCard = ({
     <div
       onMouseOver={showBtn}
       onMouseOut={hideBtn}
-      className="overflow-hidden h-fit lg:w-[95%] p-2 rounded mx-auto bg-slate-200 shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500 relative"
+      className="overflow-hidden h-fit lg:w-[95%] p-2 rounded mx-auto bg-slate-200 dark:bg-slate-700 dark:text-white shadow-sm hover:bg-slate-100 hover:shadow-lg duration-500 relative"
     >
       <div className=" rounded flex flex-col lg:flex-row">
         <div className="lg:py-4 p-4 flex flex-col gap-3">
@@ -45,14 +45,14 @@ const VaultCard = ({
       </div>
       <button className="text-white bg-blue-700 rounded-md hover:bg-blue-800  py-2 px-3 font-medium mt-2 w-full hover:shadow duration-500">
         <a href={productURL} target="_blank">
-          Buy now in {domain}
+          Buy now in <span className="capitalize">{domain}</span>
         </a>
       </button>
       {onHover && (
         <div className="transition flex gap-4 duration-1000 ease-in absolute top-4 right-4">
           <MdDeleteForever
             size={32}
-            className=" text-secondary hover:text-red-600 hover:scale-125 hover:drop-shadow-md duration-300 cursor-pointer"
+            className=" text-black dark:text-slate-200 dark:hover:text-red-500 hover:text-red-600 hover:scale-125 hover:drop-shadow-md duration-300 cursor-pointer"
             onClick={deleteData}
           />
         </div>
@@ -66,9 +66,8 @@ VaultCard.propTypes = {
   desc: propTypes.string,
   price: propTypes.string,
   productURL: propTypes.string,
-  deleteData: propTypes.string,
+  deleteData: propTypes.func,
   category: propTypes.string,
-
 };
 
 export default VaultCard;

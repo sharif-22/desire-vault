@@ -37,7 +37,7 @@ const Product = () => {
     getFirebaseDatas(uid);
   }, [render]);
 
-  // added settimeout for loading 
+  // added settimeout for loading
   useEffect(() => {
     const timeoutSkeleton = setTimeout(() => {
       setLoading(false);
@@ -51,10 +51,15 @@ const Product = () => {
     reRender(!render);
   };
 
+  let sum = userVault.reduce((prev, curr) => {
+    return prev + parseInt(curr.price);
+  }, 0);
+  console.log(sum);
+
   return (
     <div
-      className={`lg:max-w-6xl 2xl:max-w-7xl mt-20 mx-auto p-5 xl:p-0 flex lg:flex-row-reverse flex-col-reverse ${
-        userVault.length > 4 ? "h-auto" : "lg:h-[90dvh]"
+      className={`lg:max-w-6xl 2xl:max-w-7xl pt-20 mx-auto  flex lg:flex-row-reverse flex-col-reverse ${
+        userVault.length > 4 ? "h-auto" : "lg:h-screen"
       }`}
     >
       <div className="lg:sticky lg:top-5">
@@ -66,13 +71,14 @@ const Product = () => {
         <div className="flex flex-col justify-center items-center mx-auto">
           <img src="../pngdata.png" alt="" className="items-center w-40 h-40" />
           <p className="text-2xl font-medium text-gray-600">
-            There is no data in desire vault
+            There is no data in Desire Vault
           </p>
         </div>
       ) : (
         <div className="w-full justify-center xs:grid">
+          {}
           {userVault.map((items, index) => {
-            console.log(items);
+            // console.log(items);
             const { productName, price, desc, productURL, id } = items;
             return (
               <div key={index} className="mb-4 mx-4 flex-1">
