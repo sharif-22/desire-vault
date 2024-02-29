@@ -45,7 +45,7 @@ const VaultCard = ({
       </div>
       <button className="text-white bg-blue-700 rounded-md hover:bg-blue-800  py-2 px-3 font-medium mt-2 w-full hover:shadow duration-500">
         <a href={productURL} target="_blank">
-          Buy now in {domain}
+          Buy now in <span className="capitalize">{domain}</span>
         </a>
       </button>
       {onHover && (
@@ -66,7 +66,7 @@ VaultCard.propTypes = {
   desc: propTypes.string,
   price: propTypes.string,
   productURL: propTypes.string,
-  deleteData: propTypes.string,
+  deleteData: propTypes.func,
   category: propTypes.string,
 };
 

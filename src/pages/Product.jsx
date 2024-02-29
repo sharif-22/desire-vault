@@ -51,6 +51,11 @@ const Product = () => {
     reRender(!render);
   };
 
+  let sum = userVault.reduce((prev, curr) => {
+    return prev + parseInt(curr.price);
+  }, 0);
+  console.log(sum);
+
   return (
     <div
       className={`lg:max-w-6xl 2xl:max-w-7xl pt-20 mx-auto  flex lg:flex-row-reverse flex-col-reverse ${
@@ -71,8 +76,9 @@ const Product = () => {
         </div>
       ) : (
         <div className="w-full justify-center xs:grid">
+          {}
           {userVault.map((items, index) => {
-            console.log(items);
+            // console.log(items);
             const { productName, price, desc, productURL, id } = items;
             return (
               <div key={index} className="mb-4 mx-4 flex-1">
