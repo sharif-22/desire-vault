@@ -23,7 +23,7 @@ const TextAreaInput = ({
         {required ? <span className="text-red-500 font-bold px-1">*</span> : ""}
       </div>
       <textarea
-        className="outline-none rounded bg-slate-200 p-2"
+        className="outline-none rounded bg-slate-200 dark:bg-slate-500 p-2"
         type={type}
         name={name}
         id={name}

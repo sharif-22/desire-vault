@@ -11,11 +11,11 @@ const Input = ({
   handleOnChange,
   type = "text",
   width = "w-full",
-  labelclassName = "font-medium text-base text-zinc-700",
+  labelclassName = "font-medium text-base text-zinc-700 dark:text-white",
   // bgColor = "bg-slate-200",
 }) => {
   return (
-    <div className={`flex flex-col p-3 gap-y-2 ${width}`}>
+    <div className={`flex flex-col p-3 gap-y-2 ${width} `}>
       <div className="flex">
         <label className={labelclassName} htmlFor={name}>
           {label}
@@ -28,7 +28,7 @@ const Input = ({
       </div>
       <input
         // className={className}
-        className={`outline-none rounded p-2`}
+        className={`outline-none rounded p-2 dark:bg-slate-500 dark:text-white`}
         type={type}
         name={name}
         id={name}

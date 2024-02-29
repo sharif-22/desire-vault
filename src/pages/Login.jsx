@@ -8,7 +8,6 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/index";
 import { Vault } from "../Context";
-import Input from "../component/FormComponents/Input";
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -101,7 +100,7 @@ const Login = () => {
           </div>
           {/* login */}
           <div className={createAcc ? "hidden" : "block"}>
-            <div className="w-full lg:max-w-xl p-6 space-y-4 sm:p-8 bg-white rounded-lg shadow-xl dark:bg-gray-800">
+            <div className="w-full lg:max-w-xl p-6 space-y-4 sm:p-8 bg-white rounded-lg shadow-md hover:shadow-xl duration-500 dark:bg-gray-800">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Hello There!
               </h2>
@@ -120,7 +119,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     id="login-email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required
                     onChange={(event) => {
@@ -140,17 +139,19 @@ const Login = () => {
                     name="password"
                     id="login-password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                     onChange={(event) => {
                       setLoginPassword(event.target.value);
                     }}
                   />
                 </div>
-                <button type="submit" onClick={login}>
-                  <div className="block px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Login to your account
-                  </div>
+                <button
+                  className="w-full block px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  type="submit"
+                  onClick={login}
+                >
+                  Login to your account
                 </button>
                 <div className="text-sm font-medium text-gray-900 dark:text-white">
                   Not registered yet?{" "}
@@ -169,7 +170,7 @@ const Login = () => {
           </div>
           {/* Create form  */}
           <div className={createAcc ? "block" : "hidden"}>
-            <div className="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow-xl dark:bg-gray-800">
+            <div className="w-full lg:max-w-xl p-6 space-y-4 sm:p-8 bg-white rounded-lg  shadow-md hover:shadow-xl duration-500 dark:bg-gray-800">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                 Welcome to DesireVault!{" "}
                 {/* <span className="text-blue-500">{user?.email}</span> */}
@@ -178,7 +179,7 @@ const Login = () => {
                 Create Your account to continue
               </h2>
 
-              <form className="mt-8 space-y-3" onSubmit={register}>
+              <form className="mt-8 space-y-6" onSubmit={register}>
                 {/* register */}
                 <div>
                   <label
@@ -191,7 +192,7 @@ const Login = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required
                     onChange={(event) => {
@@ -211,7 +212,7 @@ const Login = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                     onChange={(event) => {
                       setRegisterPassword(event.target.value);
@@ -220,7 +221,7 @@ const Login = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full block px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="w-full block px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-md hover:bg-blue-800 focus:ring-4 focus:ring-blue-300  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   onClick={register}
                 >
                   Create my account

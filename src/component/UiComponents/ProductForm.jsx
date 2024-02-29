@@ -51,7 +51,7 @@ const ProductForm = () => {
         className="h-fit sticky top-20 "
         onSubmit={handleSubmit(sendInfoToDB)}
       >
-        <div className="sm:max-w-xs lg:w-96 mx-auto  bg-slate-100 p-2 rounded">
+        <div className="sm:max-w-xs lg:w-96 mx-auto  bg-slate-100 dark:bg-slate-800 dark:text-white p-2 rounded">
           <InputField
             label="Product Name"
             placeholder="Enter Product name"
@@ -97,7 +97,7 @@ const ProductForm = () => {
           />
           <ButtonInput
             styles={
-              "text-lg capitalize text-white bg-slate-700 hover:bg-slate-800 "
+              "text-lg capitalize text-white bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-200 dark:hover:text-slate-800"
             }
             width="w-full"
             btnText={"save"}
