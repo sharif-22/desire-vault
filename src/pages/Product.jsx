@@ -57,52 +57,60 @@ const Product = () => {
   console.log(sum);
 
   return (
-    <div
-      className={`lg:max-w-6xl 2xl:max-w-7xl pt-20 mx-auto  flex lg:flex-row-reverse flex-col-reverse ${
-        userVault.length > 4 ? "h-auto" : "lg:h-screen"
-      }`}
-    >
-      <div className="lg:sticky lg:top-5">
-        <ProductForm />
+    <div>
+      <div className="flex items-center justify-center md:ml-5 pt-5 px-5 ">
+        <p className="bg-slate-700 text-sm md:text-xl mt-20 w-full  lg:w-3/4 mx-auto dark:bg-gray-600 text-white py-4 px-10">
+          Tottal amount of your vault is: ₹ {sum}
+        </p>
       </div>
-      {loading ? (
-        <AntSkeletonText />
-      ) : userVault.length === 0 ? (
-        <div className="flex flex-col justify-center items-center mx-auto">
-          <img src="../pngdata.png" alt="" className="items-center w-40 h-40" />
-          <p className="text-2xl font-medium text-gray-600">
-            There is no data in Desire Vault
-          </p>
+      <div
+        className={`lg:max-w-6xl 2xl:max-w-7xl pt-16 mx-auto  flex lg:flex-row-reverse flex-col-reverse ${
+          userVault.length > 4 ? "h-auto" : "lg:h-screen"
+        }`}
+      >
+        <div className="lg:sticky lg:top-5">
+          <ProductForm />
         </div>
-      ) : (
-        <div className="w-full justify-center xs:grid">
-          {}
-          {userVault.map((items, index) => {
-            // console.log(items);
-            const { productName, price, desc, productURL, id } = items;
-            return (
-              <div key={index} className="mb-4 mx-4 flex-1">
-                <VaultCard
-                  deleteData={() => {
-                    console.log("clicked");
-                    deleteData({ user: uid, id: id });
-                  }}
-                  key={index}
-                  product={productName}
-                  productURL={productURL}
-                  desc={desc}
-                  price={price}
-                />
-              </div>
-            );
-          })}
-        </div>
-      )}
+        {loading ? (
+          <AntSkeletonText />
+        ) : userVault.length === 0 ? (
+          <div className="flex flex-col justify-center items-center mx-auto">
+            <img
+              src="../pngdata.png"
+              alt=""
+              className="items-center w-40 h-40"
+            />
+            <p className="text-2xl font-medium text-gray-600">
+              There is no data in Desire Vault
+            </p>
+          </div>
+        ) : (
+          <div className="w-full justify-center xs:grid">
+            {}
+            {userVault.map((items, index) => {
+              // console.log(items);
+              const { productName, price, desc, productURL, id } = items;
+              return (
+                <div key={index} className="mb-4 mx-4 flex-1">
+                  <VaultCard
+                    deleteData={() => {
+                      console.log("clicked");
+                      deleteData({ user: uid, id: id });
+                    }}
+                    key={index}
+                    product={productName}
+                    productURL={productURL}
+                    desc={desc}
+                    price={price}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default Product;
-
-
-
